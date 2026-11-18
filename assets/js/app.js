@@ -85,10 +85,10 @@ function lessonRow(l){
     <div class="ls-row">
       <label class="ck" title="تعليم كمنتهي"><input type="checkbox" data-check="${l.id}" ${done.has(l.id)?'checked':''}><span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span></label>
       <button class="ls-main" data-open="${l.id}">
-        <span class="ls-num mono">${String(l.seq).padStart(3,'0')}</span>
-        <span class="ls-twrap">
+        <span class="ls-num mono">${l.seq}#</span>
+        <span class="ls-tline">
           <span class="ls-title" dir="auto">${esc(l.title)}</span>
-          <span class="ls-sub">👨‍🏫 ${esc(l.instructor)} <span class="ls-sep">•</span> <span class="mono">${esc(l.lessonNo)}</span></span>
+          <span class="ls-inst">👨‍🏫 ${esc(l.instructor)}</span>
         </span>
         <span class="badge ${bc}">${esc(bl)}</span>
         ${pc>0?`<span class="ls-fchip mono" title="نقاط الفهم المعلّمة في هذا الدرس">فهم ${pc}/${chk.length}</span>`:''}
@@ -97,7 +97,7 @@ function lessonRow(l){
       <span class="ls-chev">▾</span>
     </div>
     <div class="ls-acc ${ao?'open':''}">
-      <button class="ls-acc-t" data-acc="${l.id}">تفاصيل الدرس والمطلوب متي <i>▾</i></button>
+      <button class="ls-acc-t" data-acc="${l.id}">تفاصيل <i>▾</i></button>
       <div class="ls-acc-b">
         <div class="ls-sec"><b>وصف الدرس</b><p>${esc(l.reason)}</p></div>
         <div class="ls-sec"><b>أهم النقاط</b><ul>${(l.pts||[]).map(p=>`<li>${esc(p)}</li>`).join('')}</ul></div>
@@ -137,7 +137,7 @@ function renderNext(){
   const nxt=LS.find(l=>!done.has(l.id));
   if(!nxt){el.innerHTML=`<span class="nc-tag">✦ COMPLETED</span><div class="nc-title">أكملت الـ${LS.length} وحدة كلها — انتقل إلى Security+ ثم افتح قسم SOC.<small>أنهيت مسار Linux بالكامل 🎉</small></div><a class="btn-next" href="#soc">عرض خطة SOC ←</a>`;return}
   const ph=PH.find(p=>p.id===nxt.phaseId);
-  el.innerHTML=`<span class="nc-tag">✦ الخطوة التالية — ${esc(ph.title)}</span><div class="nc-title" dir="auto">${String(nxt.seq).padStart(3,'0')} · ${esc(nxt.title)}<small>${esc(nxt.duration)} · ${esc(nxt.instructor)}</small></div><button class="btn-next" data-goto="${nxt.id}">افتح الدرس ←</button>`;
+  el.innerHTML=`<span class="nc-tag">✦ الخطوة التالية — ${esc(ph.title)}</span><div class="nc-title" dir="auto">${nxt.seq}# · ${esc(nxt.title)}<small>${esc(nxt.duration)} · ${esc(nxt.instructor)}</small></div><button class="btn-next" data-goto="${nxt.id}">افتح الدرس ←</button>`;
 }
 
 /* ===== PROGRESS ===== */
