@@ -81,7 +81,7 @@ function render(){
         +'<button class="dot" data-id="'+esc(x.id)+'" aria-pressed="'+!!S[x.id]+'" aria-label="تم">'+(S[x.id]?'✓':'')+'</button>'
         +'<div class="row"><a class="nm" href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>'
         +'<span class="tag" style="background:'+srcColor(x.source)+'">'+esc(x.kind)+'</span>'
-        +'<span class="k">#'+esc(String(x.seq).padStart(3,'0'))+' · '+esc(x.instructor)+' · '+esc(x.duration)+' · '+esc(x.lessonNo)+'</span>'
+        +'<span class="k"><bdi>#'+esc(String(x.seq).padStart(3,'0'))+'</bdi> · '+esc(x.instructor)+' · <bdi>'+esc(x.duration)+'</bdi> · <bdi>'+esc(x.lessonNo)+'</bdi></span>'
         +'<details class="ldet"><summary>'+det+'</summary><div class="lgrid">'
         +'<div><b>لماذا في هذا الموضع؟</b>'+esc(x.reason)+'</div>'
         +'<div><b>التطبيق المطلوب</b>'+esc(x.task)+'</div>'
