@@ -11,7 +11,7 @@
   --amber:#ffb648; --amber-soft:rgba(255,182,72,.12);
   --violet:#b49bff; --violet-soft:rgba(180,155,255,.12);
   --red:#ff7070; --red-soft:rgba(255,112,112,.1);
-  --f-head:'Cairo',sans-serif; --f-body:'Cairo',sans-serif; --f-mono:'JetBrains Mono',monospace;
+  --f-head:'Cairo',sans-serif; --f-body:'Cairo',sans-serif; --f-mono:'JetBrains Mono','Cairo',monospace;
   --r-lg:18px; --r-md:13px; --r-sm:9px;
 }
 *{box-sizing:border-box}
@@ -182,7 +182,7 @@ a{color:inherit}
 .tool-btn.danger:hover{color:var(--red);border-color:rgba(255,112,112,.4)}
 .tool-btn.on{color:var(--green);border-color:var(--green-line);background:var(--green-soft)}
 .next-card{display:flex;align-items:center;flex-wrap:wrap;gap:12px;background:linear-gradient(120deg,rgba(60,232,138,.09),var(--surface) 55%);border:1px solid var(--green-line);border-radius:var(--r-lg);padding:14px 20px;margin-bottom:26px}
-.next-card .nc-tag{font-family:var(--f-mono);font-size:10px;font-weight:700;color:var(--green);letter-spacing:.12em;white-space:nowrap}
+.next-card .nc-tag{font-family:var(--f-head);font-size:10.5px;font-weight:700;color:var(--green);letter-spacing:0;white-space:nowrap}
 .next-card .nc-title{font-weight:700;font-size:14.5px;flex:1;min-width:180px}
 .next-card .nc-title small{display:block;color:var(--dim);font-weight:500;font-size:12px}
 .btn-next{background:var(--green);color:#04140b;border:0;border-radius:10px;font-family:var(--f-head);font-weight:700;font-size:13px;padding:9px 18px;cursor:pointer;transition:.2s}
