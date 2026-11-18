@@ -242,9 +242,9 @@ a{color:inherit}
 .track-cyan .ck input:checked+span{background:var(--cyan);border-color:var(--cyan)}
 .track-cyan .ck input:checked+span svg{color:#041820}
 .ls-main{flex:1;display:flex;align-items:center;gap:11px;min-width:0;background:none;border:0;color:var(--text);font-family:var(--f-body);text-align:start;cursor:pointer;padding:0}
-.ls-num{font-size:11px;color:var(--dim);flex-shrink:0}
-.lesson.is-done .ls-num{color:var(--green)}
-.track-cyan .lesson.is-done .ls-num{color:var(--cyan)}
+.ls-lno{font-size:11px;color:var(--dim);flex-shrink:0;white-space:nowrap}
+.lesson.is-done .ls-lno{color:var(--green)}
+.track-cyan .lesson.is-done .ls-lno{color:var(--cyan)}
 .ls-tline{flex:1;display:flex;align-items:baseline;gap:8px;min-width:0}
 .ls-title{font-size:14px;font-weight:600;line-height:1.55;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:0 1 auto;min-width:44px}
 .lesson.is-done .ls-title{color:var(--dim);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.25);text-decoration-thickness:1.5px}
@@ -408,7 +408,7 @@ footer{border-top:1px solid var(--line);margin-top:40px;padding:34px 0 40px;back
   .src-grid{grid-template-columns:1fr}
   .ls-row{gap:8px;padding:10px 14px}
   .ls-main{gap:7px}
-  .ls-num{font-size:10px}
+  .ls-lno{font-size:10px}
   .badge{padding:2px 7px;font-size:10px}
   .ls-acc-t{padding-inline:16px}
   .ls-acc-b{padding-inline:16px}
